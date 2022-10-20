@@ -1,0 +1,44 @@
+<%{
+	children = Child[Child_Name.first_name != null];
+	%>
+
+<%
+	for each  child in children
+	{
+		%>
+
+<h2>
+<%=child.Child_Name.first_name%><br>
+<%=child.Child_Name.last_name%></h2>
+<p>Child Gender<%
+if(child.Child_Gender.isEmpty()){%>none
+<%}else{%>
+<%=child.Child_Gender%><%}%></p>
+<p><%=child.Child_DateofBirth%></p>
+<p><%=child.Known_As%></p>
+<p>
+	<%=child.Child_Address_Home.address_line_1%>
+	<%=if(!child.Child_Address_Home.address_line_2.isEmpty()){}%>
+	<br><%=child.Child_Address_Home.district_city%>
+	<br><%=child.Child_Address_Home.state_province%>
+	<br><%=child.Child_Address_Home.postal_Code%>
+	<br><%=child.Child_Address_Home.country%>
+	<br></p>
+<p><%=child.Child_Siblings%></p>
+<p><%=child.Child_Gender%></p>
+<p><%=child.Child_DateofBirth%></p>
+<p><%=child.Child_DateofBirth%></p>
+
+<%
+	}
+
+}%>
+
+<%
+if(!child.Child_Gender.isEmpty()){
+%>
+<p>Child Gender<%=child.Child_Gender%></p>
+<%
+}
+%>
+<!-- && Parent_Administrator ==  -->

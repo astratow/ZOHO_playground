@@ -1,0 +1,26 @@
+<%{
+	children = Child[Child_Name.first_name != null];
+	%>
+
+<%
+	for each  child in children
+	{
+		%>
+
+<h2>
+<%=child.Child_Name.first_name%><br>
+<%=child.Child_Name.last_name%></h2>
+<p>Child Gender<%=child.Child_Gender%></p>
+<p>Date of Birth: <%=child.Child_DateofBirth%></p>
+<p>Known As:<%=child.Known_As%></p>
+<p>Address:<br>
+	<%=child.Child_Address_Home%>
+	<br></p>
+<p>Syblings: <%=child.Child_Siblings%></p>
+</tr>
+
+</table>
+<%
+	}
+
+}%>

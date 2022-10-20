@@ -1,0 +1,91 @@
+newest_snippet.html
+<%{
+	children = Child[Child_Name.first_name.contains(input.first_name)];
+	for each  child in children
+	{
+		%>
+<h2>
+<%=child.Child_Name.first_name%><br>
+<%=child.Child_Name.last_name%>
+</h2>
+<p>Gender: <%=child.Child_Gender%></p>
+<p>Date of Birth: <%=child.Child_DateofBirth%></p>
+<p>Known As: <%=child.Known_As%></p>
+<hr>
+<p>Address: 
+	<br><%=child.Child_Address_Home.address_line_1%>
+<%
+		if(!child.Child_Address_Home.address_line_2.isEmpty())
+		{
+			%>
+<br><%=child.Child_Address_Home.address_line_2%>
+<%
+		}
+		%>
+<br><%=child.Child_Address_Home.district_city%>
+	<br><%=child.Child_Address_Home.state_province%>
+	<br><%=child.Child_Address_Home.postal_Code%>
+	<br><%=child.Child_Address_Home.country%>
+	<br></p>
+<p>Syblings: <%=child.Child_Siblings%></p>
+<p>Religion: <%=child.Child_Religion%></p>
+<hr>
+<p>Dietary code: <%=child.Dietary_Requirements%></p>
+<p>Allergies: <%=child.Child_Allergies%></p>
+<p>Medical Details: <%=child.Child_Medical_Details1%></p>
+<hr>
+<p>Doctor</p>
+<p>Doctors Name: <%=child.Child_Doctor%></p>
+<p>Surgery Phone Number: <%=child.Doctor_s_Phone_Number%></p>
+<p>Address of Surgery: <%=child.Doctor_s_Address%></p>
+<hr>
+<p>Childcare Setting:  <%=child.Childcare_Setting%></p>
+<p>Attendance Period: <%=child.Attendance_Start_Date%> - <%=child.Attendance_Leaving_Date%></p>
+<p>Term Time only:
+<%
+		if(child.Term_Time_Only)
+		{
+			%>
+Yes
+<%
+		}
+		else
+		{
+			%>
+No
+<%
+		}
+		%>
+</p>
+<p>Status: <%=child.Child_Status%></p>
+<p>Account Administrative User: <%=child.Parent_Administrator%></p>
+<p>Billing contact name: <%=child.Billing_Contact_Name%></p>
+<p>Billing email address: <%=child.Billing_email_address%></p>
+<p>Email Opt-In: <%=child.eMail_Opt_in%></p>
+<p>Registration Form:  <%=child.Child_Registration_Form%></p>
+<p>FE Forms: </p>
+<p>FE Effective Date: </p>
+<p>Total Weekly Free Entitlement: <%=child.Free_Entitlement_Extended + child.Free_Entitlement_Extended%></p>
+<p>FE extended portion ( included in total above): <%=child.Free_Entitlement_Extended%></p>
+<p>FE Eligibility Code (30h): <%=child.Free_Entitlement_Extended%></p>
+<hr>
+<p>Additional Information/Comments:  <%=child.Additional_information_and_comments%></p>
+<hr>
+<h2>Parents/Guardians/Contacts</h2>
+<p>Full Name: </p>
+<p>Relationship:  </p>
+<p>Is Emergency Contact?:  </p>
+<p>Mobile Phone:  </p>
+<hr>
+<p>Full Name: </p>
+<p>Relationship:  </p>
+<p>Is Emergency Contact?:  </p>
+<p>Mobile Phone:  </p>
+<p>Work Phone:  </p>
+<hr>
+<h2>Booking Profile</h2>
+<p> <%=child.Show_Booking_Profile%></p>
+<%
+	}
+
+}%>

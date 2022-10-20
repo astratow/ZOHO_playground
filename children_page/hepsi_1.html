@@ -1,0 +1,42 @@
+<%{
+children = Child[Child_Name.first_name != null];
+for each child in children
+{
+%>
+<h2>
+
+
+<%=child.Child_Name.first_name%><br>
+<%
+}
+if(!child.Child_Name.last_name.isEmpty())
+%>
+
+<%=child.Child_Name.last_name%></h2>
+<%
+}
+if(!child.Child_Gender.isEmpty()){
+%>
+<p>Gender: <%=child.Child_Gender%></p>
+<%
+}
+%>
+<p>Date of Birth: <%=child.Child_DateofBirth%></p>
+<p>Known As: <%=child.Known_As%></p>
+<p>Address:
+<br><%=child.Child_Address_Home.address_line_1%>
+<br><%=child.Child_Address_Home.address_line_2%>
+<br><%=child.Child_Address_Home.district_city%>
+<br><%=child.Child_Address_Home.state_province%>
+<br><%=child.Child_Address_Home.postal_Code%>
+<br><%=child.Child_Address_Home.country%>
+<br></p>
+<p>Syblings:<%=child.Child_Siblings%></p>
+
+</tr>
+
+</table>
+<%
+}
+
+}%>

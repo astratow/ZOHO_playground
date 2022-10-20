@@ -1,0 +1,48 @@
+
+https://creator.zoho.com/appbuilder/peter.bird_norto51/norto5-kidz/formbuilder/Child/edit
+
+Add a button
+https://help.zoho.com/portal/en/kb/creator/developer-guide/pages/buttons/articles/add-a-button
+
+Create Action Item
+https://help.zoho.com/portal/en/kb/creator/developer-guide/reports/customize-report/articles/create-custom-action#Create_an_action_item
+
+Configure button action
+https://help.zoho.com/portal/en/kb/creator/developer-guide/pages/buttons/articles/configure-button-action#To_configure_a_button_action
+
+Add and configure an embed element
+https://help.zoho.com/portal/en/kb/creator/developer-guide/pages/snippets/articles/add-and-configure-an-embed-element#To_add_an_embed_element_to_your_page
+
+Configure parameters for page elements
+https://help.zoho.com/portal/en/kb/creator/developer-guide/pages/create-and-manage-parameters/articles/configure-parameters-for-page-elements#Pass_parameter_value_to_the_display_of_panel_and_button_elements
+
+Understand passing parameters to a page
+https://help.zoho.com/portal/en/kb/creator/developer-guide/pages/create-and-manage-parameters/articles/understand-passing-parameters-to-a-page#Using_parameters
+
+Editing Records via Record-ID
+https://www.zoho.com/creator/help/views/editing-records-via-record-id.html
+
+
+How to create a custom page using HTML
+https://help.zoho.com/portal/en/community/topic/tip-23-how-to-create-a-custom-page-using-html
+
+Applying Filters
+https://www.zoho.com/analytics/help/onpremise/chart/applying-filters.html
+
+Also while you were busy and I had nothing else, I have started to work on booking website... And this is driving me crazy, because I dont understand data structure in there. When I try to pull data it shows false...
+booking_info = Child_Booking_Profile[Show_basic_booking_information != null];
+
+
+for each rec in booking_info
+{
+rec.field_name; //to show the field value for all the records
+}
+It is the link name of a field that you wish to show.
+
+In this case, it is Show_basic_booking_information
+
+fake NIN:
+https://www.fakenamegenerator.com/national-insurance-number.php
+
+Mimicing while loop in deluge:
+https://functiondynamic.com/knowledge-base/zoho-deluge-while-loops/#:~:text=If%20you%20are%20creating%20a,does%20not%20have%20while%20loops.

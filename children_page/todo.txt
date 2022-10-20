@@ -1,0 +1,1 @@
+generate report for a parent and direct them to the child report
