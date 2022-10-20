@@ -1,0 +1,31 @@
+string timeSubstract(string start_time, string end_time)
+{
+// 	function takes two time strings format HH:mm and returns time difference in string format.
+
+// start time preparation:
+// splitting hour and minutes
+	start_hours = start_time.getPrefix(":").toNumber();
+	start_minutes = start_time.getSuffix(":").toNumber();
+
+// end time preparation:
+// splitting hour and minutes
+	end_hours = end_time.getPrefix(":").toNumber();
+	end_minutes = end_time.getSuffix(":").toNumber();
+if(start_hours > end_hours){
+	return "Error. You can't start after you finish.";
+}
+// calculating duration time
+duration_minutes = end_minutes - start_minutes;
+// ensuring accurate minutes calculation
+if (duration_minutes < 0){
+	duration_minutes = duration_minutes + 60;
+	duration_hours = end_hours - start_hours -1 ;
+}else 
+{
+	duration_hours = end_hours - start_hours;
+}
+
+// preparing result in string format
+duration_time = duration_hours.toString() + ":" + duration_minutes.toString();
+return duration_time;
+}
