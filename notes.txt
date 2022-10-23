@@ -46,3 +46,5 @@ https://www.fakenamegenerator.com/national-insurance-number.php
 
 Mimicing while loop in deluge:
 https://functiondynamic.com/knowledge-base/zoho-deluge-while-loops/#:~:text=If%20you%20are%20creating%20a,does%20not%20have%20while%20loops.
+
+Needs sorting days depending on current day.
