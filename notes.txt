@@ -48,3 +48,23 @@ Mimicing while loop in deluge:
 https://functiondynamic.com/knowledge-base/zoho-deluge-while-loops/#:~:text=If%20you%20are%20creating%20a,does%20not%20have%20while%20loops.
 
 Needs sorting days depending on current day.
+Ok. In this case, you can get the day of the date or the current date using this function getDayOfWeek function
+
+https://www.zoho.com/deluge/help/functions/datetime/getdayofweek.html
+
+The resultant of this function would be like below
+
+1 represents Sunday, 2 represents Monday, and so on, with 7 being the final number representing Saturday.
+
+So based on value returned, using 'if' block you can fetch the value stored in respective field.
+
+Eg:
+currentDate = '15-Mar-2019';
+dayNumber = currentDate.getDayOfWeek(); // returns 6 (meaning Friday)
+
+if(dayNumber==6)
+{
+//fetch the Friday_Session_End_Time and Friday_Session_Start_Time
+}
+
+Similary, you can configure the similar if blocks for rest of the days.

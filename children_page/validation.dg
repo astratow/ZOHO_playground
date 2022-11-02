@@ -1,0 +1,12 @@
+<%if(!child.Childcare_Setting.isEmpty())
+	{%>			 
+	<%=child.Childcare_Setting%>
+	</p>
+	<%
+	}
+else{
+	%>
+	_Missing Childcare_Setting
+	<%
+	}
+	%>

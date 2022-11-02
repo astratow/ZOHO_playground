@@ -1,0 +1,71 @@
+<%{
+	bookings_Monday = Child_Booking_Profile[Show_Monday_booking != null];
+	start_Monday = bookings_Monday.Monday_Session_Start_Time.toString();
+	end_Monday = bookings_Monday.Monday_Session_End_Time.toString();
+	duration_Monday = 3;
+	b_monday = thisapp.mondayData();
+	dateToday = zoho.currentdate.toString("dd MMMM yyyy");
+	dayToday = today.toString("EEEE");
+	booking_info = Child_Booking_Profile[Show_basic_booking_information != null];
+	whoID = zoho.loginuserid;
+	%>
+<!-- comment -->
+<h2><%=whoID%></h2>
+<table style="width:100%">
+  <tr>
+    <th>Booked Sessions</th>
+    <th>Details</th>
+    
+  </tr>
+  <tr>
+    <td>
+	<%=dayToday%>,
+	<%=dateToday%>-
+	<%=start_Monday%> to <%=end_Monday%>
+	</td>
+	</tr>
+	<br>
+	<%=b_monday%>
+<%
+	for each  rec in b_monday
+	{
+		%>
+<tr>
+		<td>
+<%=rec.get("Setting_Name")%><hr>
+<%=rec.get("Session_Start_Time")%><hr>
+<%=rec.get("Session_End_Time")%><hr>
+</td>
+</tr>
+<%
+	}
+	%>
+<tr>
+	<td>
+<br>
+	Duration: <%=duration_Monday%>
+	<br>
+	Free Entitlement: 
+	</td>
+    <td>
+		Status: <br>
+		Holiday: <br>
+		Cancel: <br>
+	</td>
+    
+  </tr>
+  <tr>
+    <td>
+		Status: <br>
+		Holiday: <br>
+		Cancel: <br>
+	</td>
+    <td>two</td>
+    
+  </tr>
+</table>
+<h2>
+</h2>
+<%
+
+}%>

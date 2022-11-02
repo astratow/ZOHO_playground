@@ -1,0 +1,83 @@
+	
+	/*
+	book_Monday = collection(
+		bookings_Monday = Child_Booking_Profile[Show_Monday_booking != null],
+		start_Monday = bookings_Monday.Monday_Session_Start_Time.toString(),
+		end_Monday = bookings_Monday.Monday_Session_End_Time.toString(),
+		duration_Monday = thisapp.timeSubstract(start_Monday.getSuffix(":"), end_Monday.getSuffix(":"))
+		);
+		
+	book_Tuesday = collection(
+		bookings_Tuesday = Child_Booking_Profile[Show_Tuesday_booking != null],
+		start_Tuesday = bookings_Tuesday.Tuesday_Session_Start_Time,
+		end_Tuesday = bookings_Tuesday.Tuesday_Session_End_Time;
+		duration_Tuesday = thisapp.timeSubstract(start_Tuesday.getSuffix(":"), end_Tuesday.getSuffix(":"))
+		);
+			
+	book_Wednesday = collection(
+		bookings_Wednesday = Child_Booking_Profile[Show_Wednesday_booking != null],
+		start_Wednesday = bookings_Wednesday.Wednesday_Session_Start_Time,
+		end_Wednesday = bookings_Wednesday.Wednesday_Session_End_Time,
+		duration_Wednesday = thisapp.timeSubstract(start_Wednesday.getSuffix(":"), end_Wednesday.getSuffix(":"))
+		);
+	
+	 book_Thursday = collection(
+		bookings_Thursday = Child_Booking_Profile[Show_Thursday_booking != null],
+		start_Thursday = bookings_Thursday.Thursday_Session_Start_Time,
+		end_Thursday = bookings_Thursday.Thursday_Session_End_Time,
+		duration_Thursday = thisapp.timeSubstract(start_Thursday.getSuffix(":"), end_Thursday.getSuffix(":"))
+		);
+	
+	book_Friday = collection(
+		bookings_Friday = Child_Booking_Profile[Show_Friday_booking != null],
+		start_Friday = bookings_Friday.Friday_Session_Start_Time,
+		end_Friday = bookings_Friday.Friday_Session_End_Time,
+		duration_Friday = thisapp.timeSubstract(start_Friday.getSuffix(":"), end_Friday.getSuffix(":"))
+		);
+		*/
+
+
+
+
+	
+map mondayData(){
+dataMap=map();
+fet=Child_Booking_Profile[Show_Monday_booking==true];
+for each rec in fet
+{
+dataMap.put("Setting_Name", rec.Monday_Childcare_Setting.Setting_Name);
+dataMap.put("Session_Start_Time", rec.Monday_Session_Start_Time);
+dataMap.put("Session_End_Time", rec.Monday_Session_End_Time);
+}
+return dataMap;
+}
+
+
+map tuesdayData(){
+dataMap=map();
+fet=Child_Booking_Profile[Show_Tuesday_booking==true];
+for each rec in fet
+{
+dataMap.put("Setting_Name",rec.Tuesday_Childcare_Setting.Setting_Name);
+dataMap.put("Session_Start_Time",rec.Tuesday_Session_Start_Time);
+dataMap.put("Session_End_Time",rec.Tuesday_Session_End_Time);
+}
+return dataMap;
+}
+
+if(zoho.currentdate.weekday()==2){
+dataMap=thisapp.mondayData();
+}
+if(zoho.currentdate.weekday()==3){
+dataMap=thisapp.tuesdayData();
+}
+if(zoho.currentdate.weekday()==4){
+dataMap=thisapp.wednesdayData();
+}
+if(zoho.currentdate.weekday()==5){
+dataMap=thisapp.thursdayData();
+}
+if(zoho.currentdate.weekday()==6){
+dataMap=thisapp.fridayData();
+}
+keyList=dataMap.keys();
