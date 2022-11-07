@@ -1,0 +1,15 @@
+<%{
+	names = Child[Child_Name.first_name.contains(input.first_name)];
+	for each  contact in names.Child_Contacts
+	{
+		%>
+
+<h2>Parents/Guardians/Contacts</h2>
+<p>Full Name:&nbsp <%=contact.Name%></p>
+<p>Relationship:&nbsp <%=contact.Relationship%> </p>
+<p>Is Emergency Contact?:&nbsp</p>
+<p>Mobile Phone:&nbsp  <%=contact.Mobile_Phone_Number%></p>
+<%
+	}
+
+}%>
