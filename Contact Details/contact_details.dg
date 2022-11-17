@@ -1,4 +1,5 @@
 <%{
+    // This snippet pulls data from contact form
 	names = Child[Child_Name.first_name.contains(input.first_name)];
 	for each  contact in names.Child_Contacts
 	{
